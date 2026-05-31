@@ -37,7 +37,7 @@ In `settings.json`:
 
 ```json
 {
-  "copilotDefaultEnv.pythonEnvironment": "venv1",
+  "copilotDefaultEnv.pythonEnvironment": "YOUR_ENV_NAME",
   "copilotDefaultEnv.environmentType": "conda",
   "copilotDefaultEnv.autoActivate": true
 }
@@ -46,7 +46,7 @@ In `settings.json`:
 ### Installation
 
 1. Place this folder into the VS Code extensions directory:
-   - Windows: `%USERPROFILE%\.vscode\extensions\copilot-default-env`
+   - Windows: `%USERPROFILE%\.vscode\extensions\ygj.copilot-default-env-1.0.0`
 2. Restart VS Code
 3. Run `npm install && npm run compile` to compile the extension
 
@@ -90,7 +90,7 @@ In `settings.json`:
 
 ```json
 {
-  "copilotDefaultEnv.pythonEnvironment": "venv1",
+  "copilotDefaultEnv.pythonEnvironment": "你的环境名",
   "copilotDefaultEnv.environmentType": "conda",
   "copilotDefaultEnv.autoActivate": true
 }
@@ -99,7 +99,7 @@ In `settings.json`:
 ### 安装
 
 1. 将此文件夹放到 VS Code 扩展目录:
-   - Windows: `%USERPROFILE%\.vscode\extensions\copilot-default-env`
+   - Windows: `%USERPROFILE%\.vscode\extensions\ygj.copilot-default-env-1.0.0`
 2. 重启 VS Code
 3. 运行 `npm install && npm run compile` 编译扩展
 
