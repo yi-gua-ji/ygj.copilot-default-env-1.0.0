@@ -1,0 +1,94 @@
+{
+  "name": "copilot-default-env",
+  "displayName": "Copilot Default Python Environment",
+  "description": "为 GitHub Copilot 设置默认的 Python 虚拟环境，让 Copilot 在每次对话中自动使用指定的 conda 环境",
+  "version": "1.0.0",
+  "publisher": "ygj",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning",
+    "Data Science"
+  ],
+  "keywords": [
+    "copilot",
+    "python",
+    "conda",
+    "virtual environment",
+    "venv"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copilotDefaultEnv.setEnvironment",
+        "title": "Copilot: 设置默认 Python 环境",
+        "shortTitle": "设置默认环境"
+      },
+      {
+        "command": "copilotDefaultEnv.showEnvironment",
+        "title": "Copilot: 显示当前默认 Python 环境",
+        "shortTitle": "显示默认环境"
+      },
+      {
+        "command": "copilotDefaultEnv.switchEnvironment",
+        "title": "Copilot: 切换默认 Python 环境",
+        "shortTitle": "切换环境"
+      },
+      {
+        "command": "copilotDefaultEnv.resetEnvironment",
+        "title": "Copilot: 重置默认 Python 环境",
+        "shortTitle": "重置环境"
+      }
+    ],
+    "configuration": {
+      "title": "Copilot 默认 Python 环境",
+      "properties": {
+        "copilotDefaultEnv.pythonEnvironment": {
+          "type": "string",
+          "default": "",
+          "description": "默认的 Python 解释器路径或 conda 环境名称。例如: D:\\Anaconda\\envs\\venv1\\python.exe 或 venv1"
+        },
+        "copilotDefaultEnv.environmentType": {
+          "type": "string",
+          "default": "conda",
+          "enum": [
+            "conda",
+            "venv",
+            "virtualenv",
+            "pipenv",
+            "poetry",
+            "custom"
+          ],
+          "description": "虚拟环境类型"
+        },
+        "copilotDefaultEnv.autoActivate": {
+          "type": "boolean",
+          "default": true,
+          "description": "启动 VS Code 时自动激活默认环境"
+        },
+        "copilotDefaultEnv.condaExecutable": {
+          "type": "string",
+          "default": "conda",
+          "description": "conda 可执行文件路径，默认为系统 PATH 中的 conda"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}
